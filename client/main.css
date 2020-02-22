@@ -1,0 +1,147 @@
+body {
+  height: 100%;
+  padding: 0px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: url(bg2.jpg);
+  background-repeat: repeat;
+}
+
+.banner{
+  /*clip-path: polygon(25% 0%,75% 0%,100% 100%,0% 100%);*/
+  transform: skew(0deg);
+  margin: 0 auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15 pt;
+  background: rgba(23, 23, 90, 0.9);
+  color: rgb(255, 255, 255);
+  border-radius: 0%;
+  width: auto;
+  height: auto;
+  display:grid;
+  place-items: center;
+  line-height: 0px;
+}
+
+.input-ui-container{
+  width:85%;
+  padding:0px;
+  margin: 0 auto;
+  margin-top:.2em;
+  border-radius: 0%;
+}
+
+.input-ui{
+  width:85%;
+  margin: 0 auto;
+}
+
+.input-field input{
+  padding: 3px;
+  margin: 3px;
+  text-align: center;
+  font-size: 9pt;
+}
+
+.name-date{
+  width: 46.1%;
+}
+.hours-rate{
+  width: 20.98%;
+}
+
+.notes-field{
+  width: 45%;
+}
+
+.submit, .info-btn{
+  margin: 5pt auto;
+  font-size: 12pt;
+  margin-top: .5em;
+  width:25%;
+  padding:10px;
+  border: none;
+  background-color: rgba(23, 23, 90, 0.5);
+  color: white;
+  border-radius: 0%;
+  display: grid;
+  place-items: center;
+}
+.submit:hover, .info-btn:hover{
+  background-color: rgb(30, 30, 129);
+}
+
+.info-btn{
+  width:5%;
+  font-size: 10pt;
+}
+
+li{
+  list-style: none;
+}
+
+.gig-name{
+  color: rgb(117, 126, 255);
+  font-size: 16pt;
+}
+
+.gigList{
+  padding: 30px;
+}
+
+.gigItem{
+  background: black;
+  color: rgb(194, 206, 224);
+  border-radius: 0%;
+  margin: 10px;
+  padding: 10px;
+  line-height: 18pt;
+  border: none;
+}
+
+.gigUi{
+  background-image: linear-gradient(to top, #c4c4c4, #444444 75%);
+  background-attachment: fixed;
+  border-radius: 10%;
+  width:85%;
+  padding: 30px;
+  margin: .5em;
+  z-index: 10;
+  border: none;
+}
+
+.editButtons{
+  float:right;
+}
+
+.editButtons input{
+  color: rgb(164, 166, 255);
+  background-color: rgb(35, 30, 110);
+  border: none;
+  border-radius: 24%;
+}
+.editButtons input:hover{
+  color:rgb(255, 255, 255);
+  background-color: rgb(63, 56, 148);
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  margin: 15% auto;
+  right: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  z-index: 20;
+  background: #2d334def;
+  color: white;
+  padding:30px;
+  place-items: center;
+}
+.confirm input{
+  margin: 10px;
+  border: none;
+  color: white;
+  background-color: black;
+}

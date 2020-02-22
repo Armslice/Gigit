@@ -1,0 +1,100 @@
+<head>
+  <title>Gigit: Job Tracker</title>
+</head>
+
+<body>
+  
+  <div class = "banner">
+    <h1>Gigit - Job Tracker</h1>
+    <p>Log your gigs and always make sure you get paid</p>
+  </div>
+
+    <div id="confirmModal" class="modal">
+      <p>Are you sure you want to delete this gig?</p>
+      <form><input class = "yesDelete" type="button" value="Yes">
+        <input class = "cancelDelete" type="button" value = "Cancel"></form>
+    </div>
+
+    <div id="infoModal" class="modal">
+      <h2>Stats</h2>
+      <p id="information"></p>
+      <input class="closeInfo" type="button" value="Close">
+    </div>
+
+    <div id="editModal" class="modal">
+      {{>gigInput edit = true formID="editForm"}}
+      <form><input class = "cancelEdit" type="button" value = "Cancel"></form>
+    </div>
+
+  <div>
+    
+    {{>gigInput create = true formID = "createForm"}}
+    <input class = "info-btn" type='button' value="Stats">
+    
+  </div>
+<div class = "gigList">
+    {{#each gigs}}
+     {{>gig}}
+    {{/each}}
+</div>
+
+
+
+</body>
+
+<template name = "gigInput">
+  <div class = "input-ui-container">
+    <div class = "input-ui">
+      <form class = "new-gig-form" id="{{formID}}">
+        <div class = "input-field">
+        <input class = "name-date" type="text" name = "name" placeholder="Gig name or number">
+        <input class = "name-date" type="text" name = "dates" placeholder="Date(s)">
+        <div>
+        <input class = "hours-rate" type="text" name = "r_hrs" placeholder="Regular hours">
+        <input class = "hours-rate" type="text" name = "ot_hrs" placeholder="Overtime hours">
+        <input class = "hours-rate" type="text" name = "dt_hrs" placeholder="Doubletime hours">
+        <input class = "hours-rate" type="text" name = "rate" placeholder="Rate">
+        </div>
+        <input class = "notes-field" type="text" name = "payroll" placeholder="Payroll">
+        <input class = "notes-field" type="text" name = "notes" placeholder="Notes">
+      </div>
+      {{#if create}}
+      <input class = "submit" type='submit' value="Add New Gig">
+      {{/if}}
+      {{#if edit}}
+      <input class = "submit" type ='submit' value="Edit Gig">
+      {{/if}}
+    </form>  
+  </div>
+</div>
+</template>
+
+<template name="gig">
+  <div class = "gigUi">
+    <div class = "gigItem"> 
+    <ul>
+      <li class = "gig-name">{{name}}</li> 
+      <li>Dates: {{dates}}</li> 
+      <li>Payroll: {{payroll}}</li>
+      <li>Hours: {{r_hrs}}, {{ot_hrs}}(ot), {{dt_hrs}}(dt)</li>
+      <li> Rate: {{rate}}</li> 
+      <li>Pay: {{pay}}</li>
+      <li>Notes: {{notes}}</li>
+    </ul>
+    </div>
+    <form id="{{_id}}">
+      <input type = "checkbox" class = "completed" checked = "{{completed}}"/>
+      <span>Completed</span>
+      <input type = "checkbox" class = "billed" checked = "{{billed}}"/>
+      <span>Billed</span>
+      <input type = "checkbox" class = "paid" checked = "{{paid}}"/>
+      <span>Paid</span>
+      <input type = "checkbox" class = "deposited" checked = "{{deposited}}"/>
+      <span>Deposited</span>
+      <div class = "editButtons">
+        <input class = "edit" type=button value="Edit">
+        <input class = "delete" type=button value="Delete">
+      </div>
+    </form>
+  </div>
+</template>
